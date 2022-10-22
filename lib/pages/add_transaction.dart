@@ -20,23 +20,24 @@ class _Addapp_finanzas_bakappNoGradientState
   String type = "Income";
 
   List<String> months = [
-    "Jan",
+    "Ene",
     "Feb",
     "Mar",
-    "Apr",
+    "Abr",
     "May",
     "Jun",
     "Jul",
-    "Aug",
+    "Ago",
     "Sep",
     "Oct",
     "Nov",
-    "Dec"
+    "Dic"
   ];
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
+        // locale: const Locale('es'),
         initialDate: selectedDate,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
@@ -56,7 +57,7 @@ class _Addapp_finanzas_bakappNoGradientState
       backgroundColor: Color(0xffe2e7ef),
       //
       body: ListView(
-        padding: EdgeInsets.all(
+        padding: const EdgeInsets.all(
           12.0,
         ),
         children: [
@@ -66,10 +67,11 @@ class _Addapp_finanzas_bakappNoGradientState
             style: TextStyle(
               fontSize: 32.0,
               fontWeight: FontWeight.w700,
+              color: Static.PrimaryMaterialColor[800],
             ),
           ),
           //
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           //
@@ -82,26 +84,26 @@ class _Addapp_finanzas_bakappNoGradientState
                     16.0,
                   ),
                 ),
-                padding: EdgeInsets.all(
+                padding: const EdgeInsets.all(
                   12.0,
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.attach_money,
                   size: 24.0,
                   // color: Colors.grey[700],
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12.0,
               ),
               Expanded(
                 child: TextField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "0",
                     border: InputBorder.none,
                   ),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24.0,
                   ),
                   onChanged: (val) {
@@ -112,7 +114,7 @@ class _Addapp_finanzas_bakappNoGradientState
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           backgroundColor: Colors.red,
-                          duration: Duration(
+                          duration: const Duration(
                             seconds: 2,
                           ),
                           content: Row(

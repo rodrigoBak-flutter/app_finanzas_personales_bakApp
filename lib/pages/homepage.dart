@@ -218,10 +218,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           const SizedBox(
-                            width: 8.0,
+                            width: 5.0,
                           ),
                           SizedBox(
-                            width: 300.0,
+                            width: 250.0,
                             child: Text(
                               "Bienvenido ${preferences.getString('name')}",
                               style: TextStyle(
@@ -242,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white70,
                         ),
                         padding: EdgeInsets.all(
-                          12.0,
+                          10.0,
                         ),
                         child: InkWell(
                           onTap: () {
@@ -256,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                               setState(() {});
                             });
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.settings,
                             size: 32.0,
                             color: Color(0xff3E454C),
@@ -353,7 +353,7 @@ class _HomePageState extends State<HomePage> {
                     12.0,
                   ),
                   child: Text(
-                    "${months[today.month - 1]} ${today.year}",
+                    "${today.day} ${months[today.month - 1]} ${today.year}",
                     style: TextStyle(
                       fontSize: 32.0,
                       color: Colors.black87,
