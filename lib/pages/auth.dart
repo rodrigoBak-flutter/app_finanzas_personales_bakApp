@@ -33,10 +33,10 @@ class _FingerPrintAuthState extends State<FingerPrintAuth> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text(
+          title: const Text(
             "ERROR",
           ),
-          content: Text(
+          content: const Text(
             "¡Debe configurar la autenticación con PIN o con huella digital para poder usar esta aplicación!\nHago esto por su seguridad 🙂",
           ),
           actions: [
@@ -44,7 +44,7 @@ class _FingerPrintAuthState extends State<FingerPrintAuth> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 "Ok",
               ),
             ),
@@ -64,7 +64,7 @@ class _FingerPrintAuthState extends State<FingerPrintAuth> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Autenticación"),
+        title: const Text("Autenticación"),
       ),
       body: Center(
         child: Column(
@@ -83,7 +83,7 @@ class _FingerPrintAuthState extends State<FingerPrintAuth> {
               ),
             ),
             //
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             //
@@ -92,7 +92,7 @@ class _FingerPrintAuthState extends State<FingerPrintAuth> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "¡Ay, chasquido! Necesita autenticarse para seguir adelante.",
                     style: TextStyle(
                       fontSize: 28.0,

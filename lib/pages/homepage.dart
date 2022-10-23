@@ -86,13 +86,15 @@ class _HomePageState extends State<HomePage> {
     List tempdataSet = [];
 
     for (TransactionModel item in entireData) {
-      if (item.date.month == today.month && item.type == "Expense") {
+      if (item.date.month == today.month && item.type == "Income") {
         tempdataSet.add(item);
       }
     }
     //
     // Sorting the list as per the date
-    tempdataSet.sort((a, b) => a.date.day.compareTo(b.date.day));
+    tempdataSet.sort(
+      (a, b) => a.date.day.compareTo(b.date.day),
+    );
     //
     for (var i = 0; i < tempdataSet.length; i++) {
       dataSet.add(
@@ -298,13 +300,13 @@ class _HomePageState extends State<HomePage> {
                         // color: Static.PrimaryColor,
                       ),
                       alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         vertical: 18.0,
                         horizontal: 8.0,
                       ),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             'Balance total',
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -354,7 +356,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Text(
                     "${today.day} ${months[today.month - 1]} ${today.year}",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 32.0,
                       color: Colors.black87,
                       fontWeight: FontWeight.w900,
@@ -364,11 +366,11 @@ class _HomePageState extends State<HomePage> {
                 //
                 dataSet.isEmpty || dataSet.length < 2
                     ? Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           vertical: 40.0,
                           horizontal: 20.0,
                         ),
-                        margin: EdgeInsets.all(
+                        margin: const EdgeInsets.all(
                           12.0,
                         ),
                         decoration: BoxDecoration(
@@ -386,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                        child: Text(
+                        child: const Text(
                           "No hay suficientes datos para representar el gráfico",
                           style: TextStyle(
                             fontSize: 20.0,
@@ -404,7 +406,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(8),
                             topRight: Radius.circular(8),
                             bottomLeft: Radius.circular(8),
@@ -423,16 +425,14 @@ class _HomePageState extends State<HomePage> {
                         child: LineChart(
                           LineChartData(
                             borderData: FlBorderData(
-                              show: false,
+                              show: true,
                             ),
                             lineBarsData: [
                               LineChartBarData(
-                                // spots: getPlotPoints(snapshot.data!),
                                 spots: getPlotPoints(snapshot.data!),
-                                isCurved: false,
+                                isCurved: true,
                                 barWidth: 2.5,
                                 color: Static.PrimaryColor,
-
                                 showingIndicators: [200, 200, 90, 10],
                                 dotData: FlDotData(
                                   show: true,
@@ -752,7 +752,7 @@ class _HomePageState extends State<HomePage> {
                       width: 4.0,
                     ),
                     Text(
-                      "Crédito",
+                      "Ingreso",
                       style: TextStyle(
                         fontSize: 20.0,
                       ),

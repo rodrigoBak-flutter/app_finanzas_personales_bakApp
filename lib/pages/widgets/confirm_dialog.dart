@@ -16,7 +16,7 @@ showConfirmDialog(BuildContext context, String title, String content) async {
               Colors.red,
             ),
           ),
-          child: Text(
+          child: const Text(
             "Si",
           ),
         ),
@@ -24,7 +24,7 @@ showConfirmDialog(BuildContext context, String title, String content) async {
           onPressed: () {
             Navigator.of(context).pop(false);
           },
-          child: Text(
+          child: const Text(
             "No",
           ),
         ),

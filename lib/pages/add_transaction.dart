@@ -37,7 +37,6 @@ class _Addapp_finanzas_bakappNoGradientState
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
-        // locale: const Locale('es'),
         initialDate: selectedDate,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
